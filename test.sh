@@ -66,7 +66,7 @@ good=$(
 )
 
 if [ "${good}" != "1" ]; then
-    echo 'PATH="$PATH:${HOME}/bin"' >> .${typeBash}rc
+    echo 'PATH="$PATH:~/bin"' >> .${typeBash}rc
 fi
 
 # $1 -> pass
@@ -105,9 +105,9 @@ alias lla="ls -la"
 setOMP() {
     curl -s https://ohmyposh.dev/install.sh | bash -s -- -d ~/bin
 
-    validateDirectory "~.config"
-    validateDirectory "~.config/oh-my-posh"
-    validateFile "~.config/oh-my-posh/theme/omp.json"
+    validateDirectory ~/.config
+    validateDirectory ~/.config/oh-my-posh
+    validateFile ~./config/oh-my-posh/theme/omp.json
 
     curl -s "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/refs/heads/main/themes/kali.omp.json" > "~/.config/oh-my-posh/theme.omp.json"
 
@@ -116,3 +116,4 @@ setOMP() {
 
 setAlias
 setOMP
+source "~/.${typeBash}rc"
