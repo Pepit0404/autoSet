@@ -110,7 +110,7 @@ setOMP() {
     validateDirectory ~/.config/oh-my-posh
     validateFile ~/.config/oh-my-posh/theme.omp.json
 
-    curl -s "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/refs/heads/main/themes/kali.omp.json" > "~/.config/oh-my-posh/theme.omp.json"
+    curl -s "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/refs/heads/main/themes/kali.omp.json" > ~/.config/oh-my-posh/theme.omp.json
 
     echo 'eval "$(oh-my-posh init ' $typeBash' --config ~/.config/oh-my-posh/theme.omp.json)"' >> ~/.${typeBash}rc    
 }
