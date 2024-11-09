@@ -1,0 +1,2 @@
+# autoSet
+my auto config 
