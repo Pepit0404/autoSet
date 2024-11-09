@@ -58,7 +58,7 @@ validateDependencies() {
 good=$(
     IFS=:
     for path in $PATH; do
-    if [ "${path%/}" = "${HOME}/bin" ]; then
+    if [ "${path%/}" = "~/bin" ]; then
         printf 1
         break
     fi
@@ -96,8 +96,7 @@ validateDirectory() {
 
 setAlias() {
     validateFile "$HOME/.bash_aliases"
-    echo '
-alias iut="ssh sapinto@ssh.iut-clermont.uca.fr"
+    echo 'alias iut="ssh sapinto@ssh.iut-clermont.uca.fr"
 alias lla="ls -la"
     ' > $HOME/.bash_aliases
 }
@@ -107,11 +106,11 @@ setOMP() {
 
     validateDirectory ~/.config
     validateDirectory ~/.config/oh-my-posh
-    validateFile ~./config/oh-my-posh/theme.omp.json
+    validateFile ~/.config/oh-my-posh/theme.omp.json
 
     curl -s "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/refs/heads/main/themes/kali.omp.json" > "~/.config/oh-my-posh/theme.omp.json"
 
-    echo 'eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/theme.omp.json)"' >> ~/.${typeBash}rc    
+    echo 'eval "$(oh-my-posh init ' $typeBash' --config ~/.config/oh-my-posh/theme.omp.json)"' >> ~/.${typeBash}rc    
 }
 
 setAlias
