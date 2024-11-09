@@ -94,6 +94,8 @@ validateDirectory() {
     return 0
 }
 
+validateDirectory ~/bin
+
 setAlias() {
     validateFile "$HOME/.bash_aliases"
     echo 'alias iut="ssh sapinto@ssh.iut-clermont.uca.fr"
