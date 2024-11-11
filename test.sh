@@ -34,7 +34,6 @@ while getopts ":h:b:" option; do
          exit;;
       b) # bash
 	 typeBash=${OPTARG};;
-  	 br
      \?) # Invalid option
          echo "Invalid option command line option. Use -h for help."
          exit 1
