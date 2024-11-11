@@ -27,13 +27,14 @@ help() {
     echo
 }
 
-while getopts ":hd:t:v:" option; do
+while getopts ":h:b:" option; do
    case $option in
       h) # display Help
          help
          exit;;
       b) # bash
 	 typeBash=${OPTARG};;
+  	 br
      \?) # Invalid option
          echo "Invalid option command line option. Use -h for help."
          exit 1
